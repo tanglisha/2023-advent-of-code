@@ -31,3 +31,12 @@ def test_possible():
     assert game4.check_possible(red=12, green=13, blue=14) is False
     assert game5.check_possible(red=12, green=13, blue=14)
     assert game6.check_possible(red=12, green=13, blue=14) is False
+
+
+def test_min_cubes():
+    game1 = Game("Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green")
+    assert game1.find_mins() == (4, 2, 6)
+
+def test_power_mins():
+    game1 = Game("Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green")
+    assert game1.power_mins() == 48
